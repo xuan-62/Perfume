@@ -1,0 +1,54 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="features_items">
+                    <h2 class="title text-center">Features Items</h2>
+                    {{#each featuresProduct}}
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="{{img-url}}"
+                                        {{!-- https://cdn1.imggmi.com/uploads/2019/12/12/01959bc45035cee5b6b91f6c398fd9ee-full.jpg --}}
+                                        alt="perfume" />
+                                    <p>{{name}} - {{company}}</p>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="/perfume/{{_id}}"><i class="fa fa-angle-right"></i>View Product</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="recommended_items">
+                    <h2 class="title text-center">recommended items</h2>
+                    {{#each recommendedProduct}}
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="{{img-url}}"
+                                        {{!-- https://cdn1.imggmi.com/uploads/2019/12/12/01959bc45035cee5b6b91f6c398fd9ee-full.jpg --}}
+                                        alt="perfume" />
+                                    <p>{{name}} - {{company}}</p>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="/perfume/{{_id}}"><i class="fa fa-angle-right"></i>View Product</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

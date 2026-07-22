@@ -1,0 +1,29 @@
+  
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Hello user {{userName}}</h2>
+            </div>
+            <div class="col-sm-12">
+                <h3>You can manage your account here:</h3>
+                <p>User Name: {{userName}}<a id="changeUserName" herf="">Change</a></p>
+                <p>Email Address: {{emailAddress}}<a id="changeEmailAddress" herf="">Change</a></p>
+                <p>Gender: {{Gender}}</p>
+                <p>Age: {{Age}}</p>
+         a       <p>Password: <a id="changePassword" herf="">Change</a></p>
+            </div>
+            <div class="col-sm-12">
+                <h3>You can manage your review here:</h3>
+                {{#each userReviews}}
+                <div class="col-sm-12">
+                    <a href="/perfume/{{perfumeId}}"><i class="fa fa-arrow-right"></i>{{perfumeName}}</a>
+                    <p>{{reviewContent}}</p>
+                    <p><a id="changeReview" herf="">Edit</a></p>
+                    <p><a id="deleteReview" herf="">Dekete</a></p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

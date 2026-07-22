@@ -1,0 +1,85 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 padding-right">
+                <div class="product-details">
+                    <div class="col-sm-5">
+                        <div class="view-product">
+                            <img src="{{img-url}}" alt="product" />
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information">
+                            <h2>{{name}} - {{company}}</h2>
+                            <p>Web ID: {{_id}}</p>
+                            {{!-- <img src="images/product-details/rating.png" alt="" />  rating system --}}
+                            <button type="button" class="btn btn-fefault cart" id="cart">
+                                <i class="fa fa-shopping-cart"></i> View on Amazon
+                            </button>
+                            <a class="hidden" href="" {{amazon-url}} id="amazonLink"></a>
+                            <p></p>
+                            <p>Share this product:</p>
+                            <br><a target="_blank" id="fbshareLink" href="#"><img
+                                    src="https://static.xx.fbcdn.net/rsrc.php/v3/yr/r/zSKZHMh8mXU.png"
+                                    alt="fb">&nbsp;&nbsp;Share</a></br>
+                            <br><a class="twitter-share-button" href="#" id="twshareLink">Tweet</a></br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-tab">
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs">
+                        <li><a href="#details" data-toggle="tab" class="active show">Details</a></li>
+                        <li><a href="#companyInfo" data-toggle="tab">Company Profile</a></li>
+                        <li><a href="#tag" data-toggle="tab">Tag</a></li>
+                        <li><a href="#reviews" data-toggle="tab">Reviews ({{reviewLength}})</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show in" id="details">
+                            <h2>Product Details</h2>
+                            <p class="productInfo">
+                                {{perfumeDetails}}
+                            </p>
+                        </div>
+
+                        <div class="tab-pane fade in" id="companyInfo">
+                            <h2>Company Information</h2>
+                            <p class="productInfo">
+                                {{perfumeCompanyInfo}}
+                            </p>
+                        </div>
+                        <div class="tab-pane fade in" id="tag">
+                            <h2>Tags</h2>
+                            {{#each perfumeTags}}
+                            <a href="/perfume/tag/{{this}}">{{this}}</a>
+                            {{/each}}
+                        </div>
+
+                        <div class="tab-pane fade in" id="reviews">
+                            <h2>Reviews</h2>
+                            {{#each perfumeReviews}}
+                            <div class="col-sm-12">
+                                <a href=""><i class="fa fa-user"></i>{{userName}}</a>
+                                <p>{{content}}</p>
+                            </div>
+                            {{/each}}
+                            <p><b>Write Your Review</b></p>
+                            <p class="{{loginHidden}}"><b>You have to login to write a review!</b><a
+                                    href="login.html"><i class="fa fa-lock"></i>
+                                    Login</a></p>
+                            <form class="{{accountHidden}}" action="/" method="post">
+                                <textarea id="userReview"></textarea>
+                                <b>Rating: </b> <input type="number" placeholder="From 1 to 5">
+                                <button type="button" class="btn btn-default pull-right">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
